@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Edit";
+}
+@model Dish
+
+<div class="w-50 mx-auto">
+    <form asp-action="MakeChanges" asp-controller="Home" method="POST">
+        <h1>Edit Your Dish!</h1>
+        <input type="hidden" name="DishId" value="@ViewBag.dishEdit.DishId">
+        <label asp-for="DishName">Name of dish:</label>
+        <input value="@ViewBag.dishEdit.DishName" class="form-control" type="text" name="DishName" id="DishName">
+        <span class="alert-danger" asp-validation-for="DishName"></span>
+        <label asp-for="Tastiness">Level of Tastiness:</label>
+        <input value="@ViewBag.dishEdit.Tastiness" class="form-control" type="number" name="Tastiness" id="Tastiness" min="0" max="10">
+        <span class="alert-danger" asp-validation-for="Tastiness"></span>
+        <label asp-for="Calories">Calories:</label>
+        <input value="@ViewBag.dishEdit.Calories" class="form-control" type="number" name="Calories" id="Calories">
+        <span class="alert-danger" asp-validation-for="Calories"></span>
+        <label asp-for="Description">Description</label>
+        <input value="@ViewBag.dishEdit.Description" class="form-control" type="text" name="Description" id="Description">
+        <span class="alert-danger" asp-validation-for="Description"></span>
+        <input class="btn btn-primary form-btn" type="submit" name="submit" id="submit">
+    </form>
+</div>

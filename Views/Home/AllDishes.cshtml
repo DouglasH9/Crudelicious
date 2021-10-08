@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Dishes View Page";
+}
+@model Dish
+
+
+<div class="w-50 mx-auto">
+    <h1 id="allDishesHeader">All the dishes!</h1>
+    <ul>
+        @{
+            foreach (Dish dish in ViewBag.AllDishes)
+            {
+                <li id="dishList">
+                    <p>Name: @dish.DishName</p>
+                    <p>Tastiness (1-10): @dish.Tastiness</p>
+                    <p>Calories: @dish.Calories</p>
+                    <p>Description: @dish.Description</p>
+                    <a style="background-color: rebeccapurple;" class="btn btn-primary" href="/showone/@dish.DishId">Show</a>
+                </li>
+            }
+        }
+    </ul>
+</div>

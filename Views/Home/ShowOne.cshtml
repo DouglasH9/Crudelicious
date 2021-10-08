@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "One Dish";
+}
+@model Dish
+
+<div class="w-50 mx-auto" id="dishcard">
+    <p>Name: @ViewBag.OneDish.DishName</p>
+    <p>Tasty Level: @ViewBag.OneDish.Tastiness</p>
+    <p>Calories: @ViewBag.OneDish.Calories</p>
+    <p>Description: @ViewBag.OneDish.Description</p>
+    <a class="btn btn-warning" href="edit/@ViewBag.OneDish.DishId">Edit</a>
+    <a class="btn btn-danger" href="/delete/@ViewBag.OneDish.DishId">Delete</a>
+</div>
